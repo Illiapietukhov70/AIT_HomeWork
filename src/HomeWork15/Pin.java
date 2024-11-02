@@ -1,11 +1,14 @@
 package HomeWork15;
+/*
+Класс описывающий ПИН Элемента
+ */
 
 public class Pin {
-    public int pinNumber;
+    public int pinNumber;//Номер ПИН
     public int pinLength;
     public int pinWigth;
     public int pinHigth;
-    public int pinRot;
+    public int pinRot;// Поворот относительно ПИН 1 к примеру Резистор ротПИН 2 = 180 градусов
 
 
     public Pin(int pinNumber, int pinLength, int pinWigth, int pinHigth, int pinRot) {

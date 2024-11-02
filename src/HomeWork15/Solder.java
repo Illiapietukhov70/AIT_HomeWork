@@ -1,7 +1,7 @@
 package HomeWork15;
 
 public class Solder extends TestMethod {
-    private String testMethod = "Solder";
+    private String testMethod = "Solder"; // Проверка на наличие пасты(паяльной) по всему ПАДу, поляризованная камера видит только отраженный свет, нет пасты = все горит!
     private String testUnit = "Abs Unit";
     private int minTestParametr = 0;
     private int maxTestParametr = 260;
@@ -10,7 +10,7 @@ public class Solder extends TestMethod {
     private boolean testPasset;
 
     public Solder( int correctTestParametr) {
-        this.correctTestParametr = correctTestParametr; // 100
+        this.correctTestParametr = correctTestParametr; // Эталон 100, результат должен быть меньше!
 
     }
 

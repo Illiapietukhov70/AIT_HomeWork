@@ -1,5 +1,7 @@
 package HomeWork15;
-
+/*
+Конечный класс Резистора - наследника Компонента
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,10 +15,10 @@ public class ResistorSMD extends CompSMD {
     private int compLength;
     private int compHigth;
     private int compWidth;
-    private boolean polary;
-    final int pinCount = 2;
-    Pin[] pins;
-    ArrayList<TestMethod> pinTests = new ArrayList<>();
+    private boolean polary;// Есть ли полярность
+    final int pinCount = 2; // У резистора только 2 контакта
+    Pin[] pins;// Объявление Массива Экземляров Класса ПИН (контактов)
+    ArrayList<TestMethod> pinTests = new ArrayList<>();// Объявление Списка Экземляров Класса TestMethod - список тестов(список = потому что не известно количество)
 
 
     public ResistorSMD(String compName, String packType, int compSapNumber, double compGlobalX, double compGlobalY, int compGlobalRot, boolean polary) {
@@ -30,9 +32,9 @@ public class ResistorSMD extends CompSMD {
         this.polary = polary;
         this.pins = new Pin[pinCount];
         this.pinTests = new ArrayList<>();
-        setCase(packType);
-        setPinResistor(this.packType, pins);
-        setPinTest(pinTests);
+        setCase(packType);// Формируем размеры исходя из типа корпуса
+        setPinResistor(this.packType, pins);  // Формируем массив ПИНов исходя из типа корпуса
+        setPinTest(pinTests); // Формируем список тестов из стандартных
 
 
 
@@ -166,9 +168,9 @@ public class ResistorSMD extends CompSMD {
 
     }
     private static ArrayList<TestMethod> setPinTest(ArrayList<TestMethod> pinTests) {
-        Miniscus miniscus = new Miniscus(700);
+        Miniscus miniscus = new Miniscus(700);// Значение по умолчанию
         pinTests.add(miniscus);
-        Solder solder = new Solder(100);
+        Solder solder = new Solder(100);// Значение по умолчанию
         pinTests.add(solder);
         return pinTests;
     }

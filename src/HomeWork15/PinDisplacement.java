@@ -1,7 +1,9 @@
 package HomeWork15;
 
-import java.util.HashMap;
-import java.util.Map;
+/*
+Класс описывающий проверку ПИНов (контактов) микросхем / смещение от ожидаемого места длину и ширину посадки ПИН
+Проверка ПИН типо GullWing QFP SOT SOIC и далее
+*/
 
 public class PinDisplacement extends TestMethod {
     private String testMethod = "PinDisplacement";

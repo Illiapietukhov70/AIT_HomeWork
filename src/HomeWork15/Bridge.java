@@ -1,4 +1,7 @@
 package HomeWork15;
+/*
+Класс описывающий проверку на КЗ (замыкание) ПИНов (контактов) - не на все детали
+*/
 
 public class Bridge extends TestMethod {
     private String testMethod = "Bridge";

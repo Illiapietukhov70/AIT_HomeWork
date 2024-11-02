@@ -1,8 +1,11 @@
 package HomeWork15;
+/*
+Абстрактный класс теста Элемента
+ */
 
 public abstract class TestMethod {
-    String testMethod;
-    String testUnit;
+    String testMethod; // Имя теста
+    String testUnit;// Единица измерения
 
     public TestMethod() {
     }

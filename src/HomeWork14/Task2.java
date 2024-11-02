@@ -1,5 +1,6 @@
 package HomeWork14;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -13,6 +14,7 @@ public class Task2 {
 
         Arrays.sort(testArray); // Для проверки через сорт
         System.out.println(testArray[testArray.length - 2]); // max2 = второй с конца сортирового массива
+
 
     }
     public static int[] generRandomArr() {

@@ -13,5 +13,7 @@ public interface MagicArrayList {
     String toStringList();
     void clear();
     int size();
+    int lastIndexOf(CompSmd comp);
+    CompSmd[] toArray();
 
 }

@@ -34,6 +34,11 @@ public class ArrayCompApp {
         System.out.println(listTest.get(4).toString()); // R8
         System.out.println(listTest.size());
 
+        System.out.println(listTest.lastIndexOf(res8)); // R8 = Last Index of Array
+        CompSmd [] newArray = listTest.toArray();
+        System.out.println(newArray[4].toString()); // CompSmd{compName='R8', packType='R0603', compSapNumber=18932}
+
+
 
 
 

@@ -104,4 +104,23 @@ public class MagicArray implements MagicArrayList{
         }
     }
 
+    @Override
+    public int lastIndexOf(CompSmd comp) {
+        int result = -1; // Not Element in Array
+        for(int i = size - 1; i >= 0; i--) {
+            if(array[i].equals(comp)) {
+                result = i;
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public CompSmd[] toArray() {
+        CompSmd [] newArray = new CompSmd[size];
+        for(int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
 }

@@ -8,7 +8,6 @@ public class Dog {
     private String dogName;
 
     public Dog(String dogName) {     // Если забыли ввести стартовую возможность собаки = ставим по умолчанию
-        this.dogHighJump = dogHighJump;
         this.dogName = dogName;
         this.jumpLimit =dogHighJump * 2;
 
@@ -16,9 +15,13 @@ public class Dog {
 
     public Dog(double dogHighJump, String dogName) {
         this(dogName); // просто хотел использовать перегрузку для практики
-        this.dogHighJump = dogHighJump > 0? dogHighJump: 15.43; // по хорошему, нужно с исключением... пока руки не дошли
+        this.dogHighJump = dogHighJump > 0? dogHighJump: 15.43; // по-хорошему, нужно с исключением... пока руки не дошли
         this.jumpLimit = dogHighJump * 2;
 
+    }
+
+    public void setDogName(String dogName) {
+        this.dogName = dogName;
     }
 
     public String getDogName() {

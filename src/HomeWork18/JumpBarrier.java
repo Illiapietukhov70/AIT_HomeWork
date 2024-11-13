@@ -17,6 +17,6 @@ public class JumpBarrier {
         Dog dog3 = new Dog(15, "Belka");
         dog3.jumpBarrier(30);
         Dog dog4 = new Dog (-45.4, "Strelka"); // проба на ошибку с отрицательным стартом
-        System.out.println(dog4.getDogHighJump() + " Strelka"); // по умолчанию
+        System.out.println(dog4.getDogHighJump() + " I'm Strelka"); // по умолчанию
     }
 }

@@ -2,10 +2,11 @@ package HomeWork18;
 
 
 public class Dog {
-    static  final double STEPJUMP = 10; // проба с Константой
+    private static  final double STEPJUMP = 10; // проба с Константой
     private double dogHighJump = 15.43;
     private double jumpLimit;
     private String dogName;
+    public static int countTrening = 0;
 
     public Dog(String dogName) {     // Если забыли ввести стартовую возможность собаки = ставим по умолчанию
         this.dogName = dogName;
@@ -37,6 +38,7 @@ public class Dog {
     }
     public double makeTraining () {
         System.out.printf("I'm %s und i doing training jumps!\n", dogName);
+        countTrening++;
         dogHighJump = jumpLimit >= dogHighJump + STEPJUMP ? dogHighJump + STEPJUMP : jumpLimit;
         System.out.printf("I'm %s, I can Jump on: %.2f cm\n", dogName, dogHighJump);
         return dogHighJump;

@@ -1,28 +1,41 @@
 package HomeWork18;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class JumpBarrier {
     public static void main(String[] args) {
-        Dog dog = new Dog("Sharik");
-        Dog dog1 = new Dog(16.736, "Bobik");
-        System.out.println(dog.getDogHighJump());
-        System.out.println(dog1.getDogHighJump());
-        System.out.println(dog.ableJump());
-        System.out.println(dog1.ableJump());
-        System.out.println(Dog.countTrening);
-        System.out.println(dog.makeTraining());
-        System.out.println(dog1.makeTraining());
-        dog.jumpBarrier(30.45);
-        System.out.println(Dog.countTrening);
-        dog.jumpBarrier(50.34);
-        System.out.println(Dog.countTrening);
-        Dog dog2 = new Dog(50.37746, "Murzik");
-        dog2.jumpBarrier(100);
-        System.out.println(Dog.countTrening);
-        Dog dog3 = new Dog(15, "Belka");
-        dog3.jumpBarrier(30);
-        System.out.println(Dog.countTrening);
-        Dog dog4 = new Dog (-45.4, "Strelka"); // проба на ошибку с отрицательным стартом
-        System.out.println(dog4.getDogHighJump() + " I'm Strelka");
-        System.out.println(Dog.countTrening);
+
+        String [] dogNameArray = {"Sharik", "Bobik", "Murzik", "Belka","Strelka"};
+        Dog [] dogArray = new Dog[5];
+        for(int i = 0; i < dogArray.length; i++) {
+            Dog dog = new Dog(new Random().nextDouble(30,80.), dogNameArray[i]);
+            dogArray[i] = dog;
+        }
+        double[] barrierArray = new double[7];
+        for(int j = 0; j < barrierArray.length; j++) {
+            barrierArray[j] = new Random().nextDouble(70, 170.);
+        }
+
+        for(int i = 0; i < dogArray.length; i++) {
+            for(int j = 0; j < barrierArray.length; j++) {
+                dogArray[i].jumpBarrier(barrierArray[j]);
+            }
+        }
+        System.out.println("===================================================");
+
+        System.out.println(Dog.countGlobalBarrier + " Sum Barriers all Dogs");  // Сколько Всех барьеров взяли Все собаки
+        System.out.println(Dog.countTrening + " Sum Training made all Dogs");  // Сколько тренеровок сделали Все собаки
+        System.out.println("===========Array Barriers===============================");
+        System.out.println(Arrays.toString(barrierArray));
+
+
+        for(int i = 0; i < dogArray.length; i++) {
+            System.out.printf("I'm %s and i did %d Barriers\n", dogArray[i].getDogName(), dogArray[i].getCountLocalBarrier());
+            System.out.printf("My Barrier Limit is: %.2f\n", dogArray[i].getJumpLimit());
+        }
+
+
+
     }
 }

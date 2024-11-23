@@ -12,6 +12,7 @@ public interface MyStrBuilderInterface {
 
     void append(String string);
     void append(String [] strings);
+    void append(int number);
     void replace(int start, int end, String str);
     void delete(int start, int end);
     void deleteCharAt(int index);

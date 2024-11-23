@@ -12,6 +12,11 @@ public class MyStrBuild implements MyStrBuilderInterface{
         this.outSting = inputString;
 
     }
+    public MyStrBuild() {
+        this.inputString ="";
+        this.inputArray = inputString.toCharArray(); // Сразу при ините - создаем Массив символолов
+        this.outSting = inputString;
+    }
 
 
     @Override
@@ -33,6 +38,13 @@ public class MyStrBuild implements MyStrBuilderInterface{
             }
         }
 
+    }
+
+    @Override
+    public void append(int number) {
+        if(number >=  0) {
+            append(Integer.toString(number));
+        }
     }
 
     @Override

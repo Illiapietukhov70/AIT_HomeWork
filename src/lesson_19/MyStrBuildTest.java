@@ -40,6 +40,11 @@ public class MyStrBuildTest {
         bl1.setLength(50);
         System.out.println(bl1.toString());
         System.out.println(bl1.length());// OK
+        MyStrBuild bl2 = new MyStrBuild("JJJJ");
+        bl2.append("jfjf").append("uuuuu").append("jfjfjfj").append(4646).append(superAppendArr);
+        System.out.println(bl2.toString());
+
+
 
 
     }

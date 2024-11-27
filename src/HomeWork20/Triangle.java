@@ -1,18 +1,21 @@
 package HomeWork20;
 
-public class Rectangle extends Shape{
-    private double height;
-    private double width;
+public class Triangle extends Shape {
+    private double a;
+    private double b;
+    private  double c;
 
-    public Rectangle(String name, double height, double width) {
+    public Triangle(String name, double a, double b, double c) {
         super(name);
-        this.height = height;
-        this.width = width;
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
+
 
     @Override
     public double getPerimeter() {
-        return (height + width) * 2;
+        return a + b + c;
     }
 
     @Override
@@ -22,12 +25,12 @@ public class Rectangle extends Shape{
 
     @Override
     public double calculateArea() {
-        return height * width;
+        double tempHalfPer = getPerimeter()/ 2;
+        return Math.pow((tempHalfPer - a) * (tempHalfPer - b) * (tempHalfPer - c) * tempHalfPer, 0.5);
     }
 
     @Override
     public void setColor(String color) {
-        this.color = color;
 
     }
 
@@ -36,5 +39,4 @@ public class Rectangle extends Shape{
         String result = String.format("Name: %s Perimeter: %.2f Area: %.2f Color: %s", displayInfo(), getPerimeter(), calculateArea(), color);
         return result;
     }
-
 }

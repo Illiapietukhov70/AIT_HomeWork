@@ -20,7 +20,7 @@ public class MyStrBuild implements MyStrBuilderInterface{
 
 
     @Override
-    public void append(String string) {
+    public MyStrBuild append(String string) {
         if(string != null) {
             char[] appendArray = string.toCharArray();
             char[] resultArray = new char[inputArray.length + appendArray.length]; // Длинна выводного Массива
@@ -28,23 +28,26 @@ public class MyStrBuild implements MyStrBuilderInterface{
             System.arraycopy(appendArray, 0, resultArray, inputArray.length, appendArray.length); // Копирование Введенного
             inputArray = resultArray;
         }
+        return this;
     }
 
     @Override
-    public void append(String[] strings) {
+    public MyStrBuild append(String[] strings) {
         if (strings.length > 0 && strings != null) {
             for (int i = 0; i < strings.length; i++) {
                 append(strings[i]); // Для каждого элемента - обычный аппенд
             }
         }
+        return this;
 
     }
 
     @Override
-    public void append(int number) {
+    public MyStrBuild append(int number) {
         if(number >=  0) {
             append(Integer.toString(number));
         }
+        return this;
     }
 
     @Override

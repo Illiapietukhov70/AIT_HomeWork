@@ -10,9 +10,9 @@ public interface MyStrBuilderInterface {
     // charAt(int index): Возвращает символ в указанной позиции.
     // substring(int start, int end): Возвращает подстроку в диапазоне от start до end.
 
-    void append(String string);
-    void append(String [] strings);
-    void append(int number);
+    MyStrBuild append(String string);
+    MyStrBuild append(String [] strings);
+    MyStrBuild append(int number);
     void replace(int start, int end, String str);
     void delete(int start, int end);
     void deleteCharAt(int index);

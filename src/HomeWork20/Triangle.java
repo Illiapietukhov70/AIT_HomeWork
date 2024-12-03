@@ -7,9 +7,16 @@ public class Triangle extends Shape {
 
     public Triangle(String name, double a, double b, double c) {
         super(name);
-        this.a = a;
-        this.b = b;
-        this.c = c;
+        if(a < (c + b) && b < (a + c) && c < (a + b)) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        } else {
+            throw new MyException("Условие сторон треугольника не выполняется");
+        }
+
+
+
     }
 
 

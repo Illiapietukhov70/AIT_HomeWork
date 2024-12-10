@@ -23,10 +23,10 @@ public class Workshop {
 
 
         CheckElem elem6 = new CheckElem("клавиатура", 88, 21);// Данной запчасти нет в БД
-        System.out.println(Gadget.repairCostDict.contains(elem6) + " = Eсть ли данная ЗП в БД");// Ожидаю False
+        System.out.println(Gadget.magicArrayGen.contains(elem6) + " = Eсть ли данная ЗП в БД");// Ожидаю False
 
         processRepair(smartphone, elem6);// По идее мы ее добавим в Статик лист абстракта
-        System.out.println(Gadget.repairCostDict.contains(elem6) + " = Eсть ли данная ЗП в БД");// Ожидаю True
+        System.out.println(Gadget.magicArrayGen.contains(elem6) + " = Eсть ли данная ЗП в БД");// Ожидаю True
 
     }
     public static void processRepair(Gadget gadget, CheckElem elem) {

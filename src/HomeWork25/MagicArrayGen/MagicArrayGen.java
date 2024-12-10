@@ -91,8 +91,11 @@ public class MagicArrayGen<T> implements MyList {
     @Override
     public boolean contains(Object value) {
         for(T elem: array) {
-            if(elem.equals((T) value)){
-                return true;
+            if(elem != null){
+                if(elem.equals((T) value)){
+                    return true;
+            }
+
             }
         }
         return false;

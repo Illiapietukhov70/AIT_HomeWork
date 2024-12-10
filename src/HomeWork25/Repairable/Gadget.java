@@ -1,5 +1,7 @@
 package HomeWork25.Repairable;
 
+import HomeWork25.MagicArrayGen.MagicArrayGen;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 public abstract class Gadget implements Repairable {
     protected String ownerName;
     protected String model;
-    public static ArrayList <CheckElem>repairCostDict = new ArrayList<>();
+    public static MagicArrayGen<Gadget> magicArrayGen = new MagicArrayGen<>();
 
     public Gadget(String ownerName, String model) {
         this.ownerName = ownerName;
@@ -34,7 +36,7 @@ public abstract class Gadget implements Repairable {
 
     @Override
     public double getRepairCost(CheckElem elem) {
-        if(!repairCostDict.contains(elem)) {
+        if(!magicArrayGen.contains(elem)) {
             System.out.println("Данной запчасти нет БД!");
             setRepairCostDict(elem);
         }
@@ -43,6 +45,6 @@ public abstract class Gadget implements Repairable {
 
 
     public static void setRepairCostDict(CheckElem elem) {
-        repairCostDict.add(elem);
+        magicArrayGen.append(elem);
     }
 }

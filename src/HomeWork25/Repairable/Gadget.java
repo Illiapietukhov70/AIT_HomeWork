@@ -9,7 +9,7 @@ import java.util.Scanner;
 public abstract class Gadget implements Repairable {
     protected String ownerName;
     protected String model;
-    public static MagicArrayGen<Gadget> magicArrayGen = new MagicArrayGen<>();
+    public static MagicArrayGen<CheckElem> magicArrayGen = new MagicArrayGen<>();
 
     public Gadget(String ownerName, String model) {
         this.ownerName = ownerName;

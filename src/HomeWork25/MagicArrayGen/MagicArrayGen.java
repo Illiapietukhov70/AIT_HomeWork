@@ -5,7 +5,7 @@ import HomeWork16.CompSmd;
 
 import java.util.Arrays;
 
-public class MagicArrayGen<T> implements MyList {
+public class MagicArrayGen<T> implements MyList<T> {
     private T[] array;
     private int size;
 
@@ -38,20 +38,20 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public void append(Object value) {
+    public void append(T value) {
         expandArray();
-        array[size] = (T) value;
+        array[size] = value;
         size++;
     }
 
     @Override
-    public void append(Object value, int index) {
+    public void append(T value, int index) {
         expandArray();
         if(index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
         System.arraycopy(array, index, array, index + 1, size - index);
-        array[index] = (T) value;
+        array[index] = value;
         size++;
     }
 
@@ -68,9 +68,9 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public int indexOf(Object value) {
+    public int indexOf(T value) {
         for(int i = 0; i < size; i++){
-            if(array[i].equals((T)value)) {
+            if(array[i].equals(value)) {
                 return i;
             }
         }
@@ -78,10 +78,10 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public int lastIndexOf(Object value) {
+    public int lastIndexOf(T value) {
         int result = -1; // Not Element in Array
         for(int i = size - 1; i >= 0; i--) {
-            if(array[i].equals((T) value)) {
+            if(array[i].equals(value)) {
                 result = i;
             }
         }
@@ -89,10 +89,10 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public boolean contains(Object value) {
+    public boolean contains(T value) {
         for(T elem: array) {
             if(elem != null){
-                if(elem.equals((T) value)){
+                if(elem.equals(value)){
                     return true;
             }
 
@@ -102,8 +102,8 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public Object[] toArray() {
-        Object[] result = new MagicArrayGen[size];
+    public T[] toArray() {
+        T[] result = (T[])new Object[size];
         for (int i = 0; i < result.length; i++) {
             result[i] = array[i];
         }
@@ -112,9 +112,9 @@ public class MagicArrayGen<T> implements MyList {
 
 
     @Override
-    public boolean remove(Object value) {
+    public boolean remove(T value) {
         for(int i = 0; i < size; i++){
-            if(array[i].equals((T) value)) {
+            if(array[i].equals(value)) {
                 Object temp = remove(i);
                 return true;
             }
@@ -123,14 +123,14 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public Object remove(int index) {
+    public T remove(int index) {
         checkIndex(index);
         T temp = array[index];
         for(int i = index; i < size -1; i++){
             array[i] = array[i + 1];
         }
         size--;
-        return temp; // Типо pop в питоне TODO
+        return temp;
     }
 
     @Override
@@ -142,15 +142,15 @@ public class MagicArrayGen<T> implements MyList {
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         checkIndex(index);
         return array[index];
     }
 
     @Override
-    public void set(int index, Object value) {
+    public void set(int index, T value) {
         checkIndex(index);
-        array[index] = (T) value;
+        array[index] = value;
 
     }
 

@@ -1,5 +1,7 @@
 package HomeWork25.Repairable;
 
+import HomeWork25.MagicArrayGen.MagicArrayGen;
+
 public class Workshop {
     public static void main(String[] args) {
         Laptop laptop = new Laptop("Lena", "Ipad_12_inch");

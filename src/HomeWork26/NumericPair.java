@@ -19,4 +19,10 @@ public class NumericPair <T extends Number, V extends Number> {
     public V getNumberTwo() {
         return numberTwo;
     }
+    public void swap() {
+         V tempTwo = (V) numberOne;
+         T tempOne = (T) numberTwo;
+         numberOne = tempOne;
+         numberTwo = tempTwo;
+    }
 }

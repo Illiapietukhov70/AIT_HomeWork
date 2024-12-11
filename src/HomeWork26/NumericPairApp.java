@@ -7,7 +7,9 @@ public class NumericPairApp {
 
         NumericPair<Double, Integer> mixPair1 = new NumericPair<>(5.5, 4);
         System.out.println(mixPair1.sum());// Вывод: 9.4
-        System.out.println(mixPair1.getNumberTwo());// Ожидаем Интегер
+        System.out.println(mixPair1.getNumberTwo());//// Ожидаем Интегер
+        mixPair1.swap();
+        System.out.println(mixPair1.getNumberTwo());// numberOne Double
 
 
     }

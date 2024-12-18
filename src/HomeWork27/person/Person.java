@@ -17,6 +17,7 @@ public class Person {
     }
 
     public void setEmail(String email) {
+
         if(isEmailValid(email)){
             this.email = email;
         }
@@ -40,11 +41,10 @@ public class Person {
         String strTest = "!%$@&*()[]";
         boolean testPassLwCase = false, testPassUpCase = false, testDigit = false, testSimbol = false;
         for (Character elem: password.toCharArray()) {
-            testPassLwCase = testPassLwCase || (elem == Character.toLowerCase(elem) && !Character.isDigit(elem));
-            testPassUpCase = testPassUpCase || (elem == Character.toUpperCase(elem) && !Character.isDigit(elem));
-            testDigit = testDigit || Character.isDigit(elem);
-            testSimbol = testSimbol || strTest.contains(elem.toString());
-//            System.out.println(testPassUpCase + " " + testPassLwCase + " " + testDigit + " " + testSimbol);
+             if(Character.isLowerCase(elem)) testPassLwCase = true;
+             if (Character.isUpperCase(elem)) testPassUpCase = true;
+             if (Character.isDigit(elem)) testDigit = true ;
+             if (strTest.contains(elem.toString())) testSimbol = true;
         }
         if(testPassLwCase && testPassUpCase && testDigit && testSimbol && password.length() >= 8){
             this.password = password;
